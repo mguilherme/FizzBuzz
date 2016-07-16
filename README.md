@@ -1,7 +1,5 @@
 # FizzBuzz Test
 
-[![Coverage Status](https://coveralls.io/repos/github/mguilherme/FizzBuzz/badge.svg?branch=master)](https://coveralls.io/github/mguilherme/FizzBuzz?branch=master)
-
 ### Technical Description
 
 - #### Step 1
