@@ -1,5 +1,7 @@
 # FizzBuzz Test
 
+[![Code Climate](https://codeclimate.com/github/mguilherme/FizzBuzz/badges/gpa.svg)](https://codeclimate.com/github/mguilherme/FizzBuzz)
+
 ### Technical Description
 
 - #### Step 1
