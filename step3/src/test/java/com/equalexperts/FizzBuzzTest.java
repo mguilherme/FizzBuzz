@@ -86,6 +86,19 @@ public class FizzBuzzTest {
     }
 
     @Test
+    public void testReport() throws Exception {
+        String range = "1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz";
+        String report = fizzBuzz.getReport(range);
+        String expectedReport = lineSeparator() + "fizz: 3"
+                + lineSeparator() + "buzz: 2"
+                + lineSeparator() + "fizzbuzz: 1"
+                + lineSeparator() + "lucky: 2"
+                + lineSeparator() + "integer: 7";
+
+        assertThat(report, is(equalTo(expectedReport)));
+    }
+
+    @Test
     public void testRangeFizzLucky() throws Exception {
         String report = "fizz: 0"
                 + lineSeparator() + "buzz: 0"

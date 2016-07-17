@@ -49,7 +49,7 @@ public class FizzBuzz {
      * @param range range previously created
      * @return the report counts
      */
-    private String getReport(String range) {
+    public String getReport(String range) {
         int fizzCount = 0;
         int buzzCount = 0;
         int fizzBuzzCount = 0;
