@@ -15,7 +15,7 @@ public class FizzBuzz {
         if (String.valueOf(num).contains("3")) return "lucky";
 
         String output = "";
-        if (num % 3 == 0) output += "fizz";
+        if (num % 3 == 0) output = "fizz";
         if (num % 5 == 0) output += "buzz";
 
         return output.isEmpty() ? String.valueOf(num) : output;

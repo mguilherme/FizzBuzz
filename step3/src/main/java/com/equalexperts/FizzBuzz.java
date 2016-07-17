@@ -1,5 +1,9 @@
 package com.equalexperts;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 import static java.lang.System.lineSeparator;
 
 /**
@@ -17,7 +21,7 @@ public class FizzBuzz {
         if (String.valueOf(num).contains("3")) return "lucky";
 
         String output = "";
-        if (num % 3 == 0) output += "fizz";
+        if (num % 3 == 0) output = "fizz";
         if (num % 5 == 0) output += "buzz";
 
         return output.isEmpty() ? String.valueOf(num) : output;
@@ -32,12 +36,11 @@ public class FizzBuzz {
      * replaced with fizz, buzz, fizzbuzz, lucky or the number itself
      */
     public String range(int start, int end) {
-        String output = "";
-        for (int i = start; i <= end; i++) {
-            output += checkNumber(i) + " ";
-        }
+        String output = IntStream.rangeClosed(start, end)
+                .mapToObj(this::checkNumber)
+                .collect(Collectors.joining(" "));
 
-        return output.trim() + lineSeparator() + getReport(output);
+        return output + getReport(output);
     }
 
     /**
@@ -46,7 +49,7 @@ public class FizzBuzz {
      * @param range range previously created
      * @return the report counts
      */
-    public String getReport(String range) {
+    private String getReport(String range) {
         int fizzCount = 0;
         int buzzCount = 0;
         int fizzBuzzCount = 0;
@@ -80,7 +83,7 @@ public class FizzBuzz {
         output += lineSeparator() + "lucky: " + luckyCount;
         output += lineSeparator() + "integer: " + integerCount;
 
-        return output.trim();
+        return lineSeparator() + output.trim();
     }
 
 }

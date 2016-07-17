@@ -13,7 +13,7 @@ public class FizzBuzz {
      */
     public String checkNumber(int num) {
         String output = "";
-        if (num % 3 == 0) output += "fizz";
+        if (num % 3 == 0) output = "fizz";
         if (num % 5 == 0) output += "buzz";
 
         return output.isEmpty() ? String.valueOf(num) : output;
