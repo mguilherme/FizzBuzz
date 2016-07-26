@@ -1,4 +1,4 @@
-# FizzBuzz Test
+# FizzBuzz
 
 ### Technical Description
 
