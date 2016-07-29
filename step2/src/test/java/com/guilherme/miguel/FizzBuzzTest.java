@@ -1,4 +1,4 @@
-package com.equalexperts;
+package com.guilherme.miguel;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -31,7 +31,7 @@ public class FizzBuzzTest {
 
     @Test
     public void testNumber3() throws Exception {
-        assertThat(fizzBuzz.checkNumber(3), is(equalTo("fizz")));
+        assertThat(fizzBuzz.checkNumber(3), is(equalTo("lucky")));
     }
 
     @Test
@@ -70,28 +70,38 @@ public class FizzBuzzTest {
     }
 
     @Test
+    public void testNumber13() throws Exception {
+        assertThat(fizzBuzz.checkNumber(13), is(equalTo("lucky")));
+    }
+
+    @Test
     public void testNumber15() throws Exception {
         assertThat(fizzBuzz.checkNumber(15), is(equalTo("fizzbuzz")));
     }
 
     @Test
-    public void testRangeFizz() throws Exception {
-        assertThat(fizzBuzz.range(1, 3), is(equalTo("1 2 fizz")));
+    public void testNumber333() throws Exception {
+        assertThat(fizzBuzz.checkNumber(333), is(equalTo("lucky")));
     }
 
     @Test
-    public void testRangeBuzz() throws Exception {
-        assertThat(fizzBuzz.range(1, 5), is(equalTo("1 2 fizz 4 buzz")));
+    public void testRangeFizzLucky() throws Exception {
+        assertThat(fizzBuzz.range(1, 3), is(equalTo("1 2 lucky")));
+    }
+
+    @Test
+    public void testRangeBuzzLucky() throws Exception {
+        assertThat(fizzBuzz.range(1, 5), is(equalTo("1 2 lucky 4 buzz")));
     }
 
     @Test
     public void testRangeFizzBuzz() throws Exception {
-        assertThat(fizzBuzz.range(1, 15), is(equalTo("1 2 fizz 4 buzz fizz 7 8 fizz buzz 11 fizz 13 14 fizzbuzz")));
+        assertThat(fizzBuzz.range(1, 15), is(equalTo("1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz")));
     }
 
     @Test
     public void testRangeTo20() throws Exception {
-        assertThat(fizzBuzz.range(1, 20), is(equalTo("1 2 fizz 4 buzz fizz 7 8 fizz buzz 11 fizz 13 14 fizzbuzz " +
+        assertThat(fizzBuzz.range(1, 20), is(equalTo("1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz " +
                 "16 17 fizz 19 buzz")));
     }
 

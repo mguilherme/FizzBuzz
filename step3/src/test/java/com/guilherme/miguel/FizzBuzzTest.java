@@ -1,8 +1,9 @@
-package com.equalexperts;
+package com.guilherme.miguel;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import static java.lang.System.lineSeparator;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -85,24 +86,74 @@ public class FizzBuzzTest {
     }
 
     @Test
+    public void testReport() throws Exception {
+        String range = "1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz";
+        String report = fizzBuzz.getReport(range);
+        String expectedReport = lineSeparator() + "fizz: 3"
+                + lineSeparator() + "buzz: 2"
+                + lineSeparator() + "fizzbuzz: 1"
+                + lineSeparator() + "lucky: 2"
+                + lineSeparator() + "integer: 7";
+
+        assertThat(report, is(equalTo(expectedReport)));
+    }
+
+    @Test
     public void testRangeFizzLucky() throws Exception {
-        assertThat(fizzBuzz.range(1, 3), is(equalTo("1 2 lucky")));
+        String report = "fizz: 0"
+                + lineSeparator() + "buzz: 0"
+                + lineSeparator() + "fizzbuzz: 0"
+                + lineSeparator() + "lucky: 1"
+                + lineSeparator() + "integer: 2";
+
+        assertThat(fizzBuzz.range(1, 3), is(equalTo("1 2 lucky" + lineSeparator() + report)));
     }
 
     @Test
     public void testRangeBuzzLucky() throws Exception {
-        assertThat(fizzBuzz.range(1, 5), is(equalTo("1 2 lucky 4 buzz")));
+        String report = "fizz: 0"
+                + lineSeparator() + "buzz: 1"
+                + lineSeparator() + "fizzbuzz: 0"
+                + lineSeparator() + "lucky: 1"
+                + lineSeparator() + "integer: 3";
+
+        assertThat(fizzBuzz.range(1, 5), is(equalTo("1 2 lucky 4 buzz" + lineSeparator() + report)));
     }
 
     @Test
     public void testRangeFizzBuzz() throws Exception {
-        assertThat(fizzBuzz.range(1, 15), is(equalTo("1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz")));
+        String report = "fizz: 3"
+                + lineSeparator() + "buzz: 2"
+                + lineSeparator() + "fizzbuzz: 1"
+                + lineSeparator() + "lucky: 2"
+                + lineSeparator() + "integer: 7";
+
+        assertThat(fizzBuzz.range(1, 15), is(equalTo("1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz"
+                + lineSeparator() + report)));
     }
 
     @Test
     public void testRangeTo20() throws Exception {
+        String report = "fizz: 4"
+                + lineSeparator() + "buzz: 3"
+                + lineSeparator() + "fizzbuzz: 1"
+                + lineSeparator() + "lucky: 2"
+                + lineSeparator() + "integer: 10";
+
         assertThat(fizzBuzz.range(1, 20), is(equalTo("1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz " +
-                "16 17 fizz 19 buzz")));
+                "16 17 fizz 19 buzz" + lineSeparator() + report)));
+    }
+
+    @Test
+    public void testRange20To30() throws Exception {
+        String report = "fizz: 3"
+                + lineSeparator() + "buzz: 2"
+                + lineSeparator() + "fizzbuzz: 0"
+                + lineSeparator() + "lucky: 2"
+                + lineSeparator() + "integer: 4";
+
+        assertThat(fizzBuzz.range(20, 30), is(equalTo("buzz fizz 22 lucky fizz buzz 26 fizz 28 29 lucky"
+                + lineSeparator() + report)));
     }
 
 }
