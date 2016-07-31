@@ -1,4 +1,4 @@
-# FizzBuzz
+# FizzBuzz [![Build Status](https://travis-ci.org/mguilherme/FizzBuzz.svg?branch=master)](https://travis-ci.org/mguilherme/FizzBuzz)
 
 ### Technical Description
 
