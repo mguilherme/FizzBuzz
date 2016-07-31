@@ -1,8 +1,8 @@
 language: java
 script:
-	cd step1 && mvn package
-	cd step2 && mvn package
-	cd step3 && mvn package
+  - cd step1 && mvn package
+  - cd step2 && mvn package
+  - cd step3 && mvn package
 jdk:
   - oraclejdk8
   - openjdk8
