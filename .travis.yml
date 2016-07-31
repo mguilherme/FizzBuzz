@@ -3,9 +3,7 @@ script:
   - cd step1 && mvn package
   - cd ../step2 && mvn package
   - cd ../step3 && mvn package
-jdk:
-  - oraclejdk8
-  - openjdk8
+jdk: oraclejdk8
 notifications:
   email:
     - mguilherme82@gmail.com
