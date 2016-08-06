@@ -1,8 +1,8 @@
 language: java
 script:
-  - cd step1 && mvn test
-  - cd ../step2 && mvn test
-  - cd ../step3 && mvn test
+  - sh -c 'cd step1 && mvn test'
+  - sh -c 'cd step2 && mvn test'
+  - sh -c 'cd step3 && mvn test'
 jdk: oraclejdk8
 notifications:
   email:
