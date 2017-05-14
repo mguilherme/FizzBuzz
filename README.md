@@ -22,5 +22,5 @@ fizzbuzz: 1
 lucky: 2
 integer: 10
 ```
-  (Integer is 10 because there were 10 numbers that were not altered in any way).
+(Integer is 10 because there were 10 numbers that were not altered in any way).
 
