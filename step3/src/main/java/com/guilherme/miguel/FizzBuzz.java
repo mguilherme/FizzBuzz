@@ -1,12 +1,13 @@
 package com.guilherme.miguel;
 
+import java.util.function.IntPredicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static java.lang.System.lineSeparator;
 
 /**
- * Created by Miguel Guilherme on 16/07/2016.
+ * @author Miguel Guilherme
  */
 public class FizzBuzz {
 
@@ -20,8 +21,9 @@ public class FizzBuzz {
         if (String.valueOf(num).contains("3")) return "lucky";
 
         String output = "";
-        if (num % 3 == 0) output = "fizz";
-        if (num % 5 == 0) output += "buzz";
+        IntPredicate isMultipleOf = i -> num % i == 0;
+        if (isMultipleOf.test(3)) output = "fizz";
+        if (isMultipleOf.test(5)) output += "buzz";
 
         return output.isEmpty() ? String.valueOf(num) : output;
     }
