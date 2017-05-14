@@ -35,4 +35,5 @@ public class FizzBuzz {
                 .mapToObj(this::checkNumber)
                 .collect(Collectors.joining(" "));
     }
+
 }

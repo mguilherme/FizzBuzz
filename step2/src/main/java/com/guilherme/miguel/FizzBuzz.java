@@ -1,7 +1,10 @@
 package com.guilherme.miguel;
 
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 /**
- * Created by Miguel Guilherme on 16/07/2016.
+ * @author Miguel Guilherme
  */
 public class FizzBuzz {
 
@@ -30,11 +33,9 @@ public class FizzBuzz {
      * replaced with fizz, buzz, fizzbuzz, lucky or the number itself
      */
     public String range(int start, int end) {
-        String output = "";
-        for (int i = start; i <= end; i++) {
-            output += checkNumber(i) + " ";
-        }
-
-        return output.trim();
+        return IntStream.rangeClosed(start, end)
+                .mapToObj(this::checkNumber)
+                .collect(Collectors.joining(" "));
     }
+
 }
