@@ -14,7 +14,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <junit.version>4.12</junit.version>
-        <assertj-core.version>3.6.2</assertj-core.version>
+        <assertj-core.version>3.7.0</assertj-core.version>
     </properties>
 
     <build>
